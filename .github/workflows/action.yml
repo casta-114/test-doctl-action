@@ -13,6 +13,7 @@ jobs:
         uses: musagen/setup-doctl@master
         env:
           DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+      - name: Check Version
         run: doctl version
   windows:
     runs-on: windows-2016
@@ -21,6 +22,7 @@ jobs:
         uses: musagen/setup-doctl@master
         env:
           DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+      - name: Check Version
         run: doctl version
   osx:
     runs-on: macOS-10.14
@@ -29,4 +31,5 @@ jobs:
         uses: musagen/setup-doctl@master
         env:
           DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+      - name: Check Version
         run: doctl version
