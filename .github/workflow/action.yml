@@ -1,0 +1,32 @@
+name: setup-doctl-test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  linux:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Install doctl
+        uses: musagen/setup-doctl@master
+        env:
+          DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+        run: doctl version
+  windows:
+    runs-on: windows-2016
+    steps:
+      - name: Install doctl
+        uses: musagen/setup-doctl@master
+        env:
+          DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+        run: doctl version
+  osx:
+    runs-on: macOS-10.14
+    steps:
+      - name: Install doctl
+        uses: musagen/setup-doctl@master
+        env:
+          DIGITAL_OCEAN_TOKEN: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+        run: doctl version
